@@ -1,5 +1,5 @@
 const webpack = require('webpack')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+//const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const poststylus = require('poststylus')
 const htmlWebpackPlugin = require('html-webpack-plugin')
 const { resolve } = require('path')
@@ -20,13 +20,15 @@ module.exports = {
       },
       {
         test: /\.styl$/,
-        //use: ['style-loader', 'css-loader', 'postcss-loader', 'stylus-loader'] // ok for dev builds
+        use: ['style-loader', 'css-loader', 'postcss-loader', 'stylus-loader'] // ok for dev builds
+        /*
         use: [
           MiniCssExtractPlugin.loader,
           'css-loader',
           'postcss-loader',
           'stylus-loader'
         ]
+        */
       }
     ]
   },
@@ -46,8 +48,10 @@ module.exports = {
     }),
     // webpack 4 replacement for deprecated extract-text-webpack-plugin
     // (actually, should only apply to PRODUCTION build)
+    /*
     new MiniCssExtractPlugin({
       filename: 'bundle.css'
     })
+    */
   ]
 }
