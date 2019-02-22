@@ -1,9 +1,9 @@
 import React from 'react'
 import { render } from 'react-dom'
 
-const App = ({greeting}) => <>{ greeting }</>
+import App from './app'
 
 render(
-  <App greeting='Hello, React!' />,
+  <App greeting='Hey, React!' />,
   document.getElementById('root')
 )
