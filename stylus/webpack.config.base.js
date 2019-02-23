@@ -1,10 +1,11 @@
 const webpack = require('webpack')
-//const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const poststylus = require('poststylus')
 const htmlWebpackPlugin = require('html-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 const { resolve } = require('path')
 
 const SOURCE_DIR = resolve('src')
+const OUTPUT_DIR = resolve('dist')
 
 module.exports = {
   output: {
@@ -17,18 +18,6 @@ module.exports = {
         test: /\.jsx?$/,
         include: SOURCE_DIR,
         loader: 'babel-loader'
-      },
-      {
-        test: /\.styl$/,
-        use: ['style-loader', 'css-loader', 'postcss-loader', 'stylus-loader'] // ok for dev builds
-        /*
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'postcss-loader',
-          'stylus-loader'
-        ]
-        */
       }
     ]
   },
@@ -36,6 +25,8 @@ module.exports = {
     extensions: ['.js', '.jsx']
   },
   plugins: [
+    // Eliminate previous bundle versions
+    new CleanWebpackPlugin(OUTPUT_DIR),
     new htmlWebpackPlugin({
       template: "webpack.html.template"
     }),
@@ -45,13 +36,6 @@ module.exports = {
           use: [poststylus(['autoprefixer'])]
         }
       }
-    }),
-    // webpack 4 replacement for deprecated extract-text-webpack-plugin
-    // (actually, should only apply to PRODUCTION build)
-    /*
-    new MiniCssExtractPlugin({
-      filename: 'bundle.css'
     })
-    */
   ]
 }
