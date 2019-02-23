@@ -1,0 +1,10 @@
+
+:root {
+  /* DEFINE COLORS */
+  --grey-1: #8FADB7;
+  --grey-2: #7997A1;
+
+  /* DEFINE COLOR SCHEMES */
+  --page-background-color: var(--grey-2);
+  --error-text-color: hsla(0, 100%, 35%, 1) /* = darken( red, 65% ) */
+}
