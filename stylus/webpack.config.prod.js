@@ -4,6 +4,7 @@ const base = require('./webpack.config.base')
 
 module.exports = merge( base, {
   mode: 'production',
+  devtool: 'source-map',
   module: {
     rules: [
       {

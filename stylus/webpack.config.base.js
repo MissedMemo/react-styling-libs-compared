@@ -1,7 +1,7 @@
-const webpack = require('webpack')
 const poststylus = require('poststylus')
 const htmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
+const { LoaderOptionsPlugin } = require('webpack')
 const { resolve } = require('path')
 
 const SOURCE_DIR = resolve('src')
@@ -30,7 +30,7 @@ module.exports = {
     new htmlWebpackPlugin({
       template: "webpack.html.template"
     }),
-    new webpack.LoaderOptionsPlugin({
+    new LoaderOptionsPlugin({
       options: {
         stylus: {
           use: [poststylus(['autoprefixer'])]
