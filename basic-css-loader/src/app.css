@@ -1,0 +1,7 @@
+@import 'styling/index.css';
+
+.app {
+  padding: 12px;
+  color: yellow; /* $error-text-color */
+  background-color: lightblue;
+}
