@@ -1,3 +1,4 @@
+/*
 @import './reset.css';
 @import './colors.css';
 
@@ -6,3 +7,4 @@
   padding: 12px;
   background-color: var(--page-background-color);
 }
+*/

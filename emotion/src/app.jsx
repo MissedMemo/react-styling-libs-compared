@@ -26,7 +26,7 @@ const ToggleButton = styled.button`
   font-size: 18px;
   color: yellow;
   padding: 8px 20px;
-  background-color: lightgreen;
+  background-color: ${props => props.theme.colors.primary};
 `
 
 const App = ({greeting}) => {
