@@ -4,19 +4,20 @@ import styled from '@emotion/styled'
 import React, { useState } from 'react'
 
 const app = css`
+  
   display: flex;
-  padding: 12px;
   background-color: lightblue;
-`
+  padding: 12px;
 
-const textwrapper = css`
-  flex: 1;
-  font-size: 24px;
-  font-style: bold;
-  text-align: center;
-  text-transform: uppercase;
-  align-self: center;
-  color: blue;
+  span {
+    flex: 1;
+    align-self: center;
+    text-align: center;
+    color: blue;
+    font-size: 24px;
+    font-style: bold;
+    text-transform: uppercase;
+  }
 `
 
 // color: yellow; /* var(--error-text-color); */
@@ -25,7 +26,6 @@ const ToggleButton = styled.button`
   font-size: 18px;
   color: yellow;
   padding: 8px 20px;
-  margin-right: 5px;
   background-color: lightgreen;
 `
 
@@ -39,8 +39,9 @@ const App = ({greeting}) => {
     <ToggleButton onClick={handleToggle}>
       { `${ isToggled ? 'Hide' : 'Show'} Greeting` }
     </ToggleButton>
-    <div css={textwrapper}>{ isToggled && greeting }</div>
+    <span>{ isToggled && greeting }</span>
   </div>
 }
+
 
 export default App
