@@ -1,12 +1,12 @@
 import React from 'react'
-import { jsx } from '@emotion/core'
-import styled from '@emotion/styled'
 import { ThemeProvider } from 'emotion-theming'
 
 const theme = {
   colors: {
-    primary: 'hotpink'
+    primary: 'lightgreen'
   }
 }
 
-export default () => <ThemeProvider theme={theme} />
+export default ({children}) => <ThemeProvider theme={theme} >
+  { children }
+</ThemeProvider>
