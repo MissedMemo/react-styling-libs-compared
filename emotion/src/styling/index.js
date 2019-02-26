@@ -1,14 +1,3 @@
-/*
-@import './reset.css';
-@import './colors.css';
-
-#root {
-  height: 100%;
-  padding: 12px;
-  background-color: var(--page-background-color);
-}
-*/
-
 import React from 'react'
 import { Global } from '@emotion/core'
 import { ThemeProvider } from 'emotion-theming'
