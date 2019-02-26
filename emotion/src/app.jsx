@@ -2,7 +2,6 @@
 import { css, jsx } from '@emotion/core'
 import styled from '@emotion/styled'
 import React, { useState } from 'react'
-import ThemeStyles from './app.styles'
 
 const app = css`
   
@@ -34,14 +33,12 @@ const App = ({greeting}) => {
 
   const handleToggle = () => setIsToggled( toggled => !toggled )
 
-  return <ThemeStyles>
-    <div css={app}>
-      <ToggleButton onClick={handleToggle}>
-        { `${ isToggled ? 'Hide' : 'Show'} Greeting` }
-      </ToggleButton>
-      <span>{ isToggled && greeting }</span>
-    </div>
-  </ThemeStyles>
+  return <div css={app}>
+    <ToggleButton onClick={handleToggle}>
+      { `${ isToggled ? 'Hide' : 'Show'} Greeting` }
+    </ToggleButton>
+    <span>{ isToggled && greeting }</span>
+  </div>
 }
 
 
