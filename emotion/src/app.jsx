@@ -1,7 +1,8 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import styled from '@emotion/styled'
-import React, { useState } from 'react'
+import React from 'react'
+import { useToggle } from './toggle'
 
 const app = css`
   
@@ -29,9 +30,7 @@ const ToggleButton = styled.button`
 
 const App = ({greeting}) => {
 
-  const [ isToggled, setIsToggled ] = useState(false)
-
-  const handleToggle = () => setIsToggled( toggled => !toggled )
+  const [ isToggled, handleToggle ] = useToggle()
 
   return <div css={app}>
     <ToggleButton onClick={handleToggle}>
