@@ -12,7 +12,7 @@
 
 ### Stylus
 
-- use the post-stylus postCSS adapter to add autoprefixer support
+- use the post-stylus postCSS adapter to add autoprefixer support (which references .browserslistrc for fine-grained control over supported browser versions).
 - extract CSS as a separate file in production builds using mini-css-extract-plugin
 - myComponent.jsx imports myComponent.styl (CSS can remain segregated while still maintaining a clear association with the component it targets)
 - define reset and shared or top-level styles via simple @import statements
@@ -36,8 +36,8 @@
 
 ### emotion-js
 
-- autoprefixing is built in
-- CSS extraction not generally recommended (and now only supported via 3rd party libs), since extraction eliminates the ability to perform dynamic styling
+- vendor prefixes are hard-coded in emotion source and .browserslistrc is not supported (but this can be overridden by setting prefix to false)
+- CSS extraction not generally recommended since it eliminates the ability to perform dynamic styling, but it can be supported via 3rd party libs like Linaria or css-literal-loader. 
 - uses no webpack loaders, but babel-plugin-emotion highly recommended for minification and source maps
 - reset and top-level styles referenced via <Global> provider syntax, with theming support via emotion-theming
 - standard CSS still supported so CSS-in-JS can be introduced into existing projects gradually
