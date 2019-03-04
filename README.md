@@ -10,7 +10,7 @@
 
 ## CSS pre-processor
 
-### Stylus
+### Stylus <span style="color: green">&#x2714; (2nd favorite)</span>
 
 - use the post-stylus postCSS adapter to add autoprefixer support (which references .browserslistrc for fine-grained control over supported browser versions).
 - extract CSS as a separate file in production builds using mini-css-extract-plugin
@@ -34,7 +34,7 @@
 - blah
 - blah
 
-### emotion-js
+### emotion-js <span style="color: green">&#x2714; (new favorite!)</span>
 
 - vendor prefixes are hard-coded in emotion source and .browserslistrc is not supported (but this can be overridden by setting prefix to false)
 - CSS extraction not generally recommended since it eliminates the ability to perform dynamic styling, but it can be supported via 3rd party libs like Linaria or css-literal-loader. 
